@@ -24,6 +24,7 @@ grammar LANGrammar;
 	private Stack<String> exprWhile = new Stack<String>();
 	private Stack<DoWhileCommand> doWhileStack = new Stack<DoWhileCommand>();
 	private Stack<String> exprDoWhile = new Stack<String>();
+	private String StrTextId = "";
 	
 	
 	public void updateType(){
@@ -122,10 +123,20 @@ cmdLeitura : LEIA
         
 cmdEscrita : ESCREVA 
 			 AP 
-			 (TEXTO {
-			 			Command cmdWrite = new WriteCommand(_input.LT(-1).getText());
-			 			stack.peek().add(cmdWrite);
-			 		}
+			 (TEXTO {StrTextId += _input.LT(-1).getText();}
+			 (AD 	{StrTextId += _input.LT(-1).getText();}
+			 ID	{			 		
+			 		if(!isDeclared(_input.LT(-1).getText())){
+			 			throw new UFABCSemanticException("A seguinte variável não foi declarada " +_input.LT(-1).getText());
+			 		symbolTable.get(_input.LT(-1).getText()).setUsed(true);
+			 		StrTextId += symbolTable.get(_input.LT(-1).getText()).getId();
+			 	}
+			 )
+			 ? {	WriteCommand cmdWrite = new WriteCommand(StrTextId);
+			 		stack.peek().add(cmdWrite);
+			 		StrTextId = "";
+			   }
+
 			 | 
 			 ID {
 			 		if(!isDeclared(_input.LT(-1).getText())){

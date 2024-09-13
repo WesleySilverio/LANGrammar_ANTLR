@@ -3,24 +3,21 @@ programa teste
 	declare a, b : STRING;
 	declare z, k : REALNUMBER;
 	
-	x := (4 * 10)/ 5 + 2 - 7 ;
+	x := (4 * 10)/ 5 + 2 - 7;
 	k := 3.5;
 	z := 4.3 + 5.8 - k + 2;	
 	b := "compiladores";
-
 	
-	escreva("segue o valor do inteiro 'x':");
-	escreva(x);
-	escreva("abaixo estará o valor do ponto flutuante 'z':");
-	escreva(z);
-	escreva("e por último o valor da String 'b':");
-	escreva(b);
-	escreva("\n");
+	escreva("segue o valor do inteiro 'x': " + x);
+	escreva("agora o valor do ponto flutuante 'z': " + z);
+	escreva("e por último o valor da String 'b': " + b);
+	escreva("impressão feita");
+	
+	
 	
 	escreva("agora é hora de digitar !!! escreva uma frase:");
 	leia(a);
-	escreva("repetindo o que você escreveu:");
-	escreva(a);
+	escreva("repetindo o que você escreveu: " + a);
 	escreva("\n");
 	
 
@@ -34,12 +31,13 @@ programa teste
 	}
 	"senao"{
 		escreva("a condição 'senao' foi ativada, logo x é maior que 5"); 
+		"se" (x == 5) entao {
+			escreva("x é igual a 5");
+		} 
 	}
 	
 	enquanto ( k <= z ){
 		k := k + 1;
 	}
-	escreva("looping finalizado, agora k é maior que z. Seu valor é:");
-	escreva(k);
-	
+	escreva("looping finalizado, agora k é maior que z. Seu valor é: " + k);
 fimprog;

@@ -12,17 +12,13 @@ public class teste {
 		k = 3.5;
 		z = 4.3 + 5.8 - k + 2;
 		b = "compiladores";
-		System.out.println("segue o valor do inteiro 'x':");
-		System.out.println(x);
-		System.out.println("abaixo estará o valor do ponto flutuante 'z':");
-		System.out.println(z);
-		System.out.println("e por último o valor da String 'b'");
-		System.out.println(b);
-		System.out.println("\n");
+		System.out.println("segue o valor do inteiro 'x': " + x);
+		System.out.println("agora o valor do ponto flutuante 'z': " + z);
+		System.out.println("e por último o valor da String 'b': " + b);
+		System.out.println("impressão feita");
 		System.out.println("agora é hora de digitar !!! escreva uma frase:");
 		a = _scTrx.nextLine();
-		System.out.println("repetindo o que você escreveu:");
-		System.out.println(a);
+		System.out.println("repetindo o que você escreveu: " + a);
 		System.out.println("\n");
 		if (x < 5) {
 			do {
@@ -33,12 +29,14 @@ public class teste {
 			}
 		} else {
 			System.out.println("a condição 'senao' foi ativada, logo x é maior que 5");
+			if (x == 5) {
+				System.out.println("x é igual a 5");
+			}
 		}
 		while (k <= z) {
 			k = k + 1;
 		}
-		System.out.println("looping finalizado, agora k é maior que z. Seu valor é:");
-		System.out.println(k);
+		System.out.println("looping finalizado, agora k é maior que z. Seu valor é: " + k);
 
 	}
 }

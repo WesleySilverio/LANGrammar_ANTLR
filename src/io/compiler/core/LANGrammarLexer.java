@@ -114,6 +114,7 @@ public class LANGrammarLexer extends Lexer {
 		private Stack<String> exprWhile = new Stack<String>();
 		private Stack<DoWhileCommand> doWhileStack = new Stack<DoWhileCommand>();
 		private Stack<String> exprDoWhile = new Stack<String>();
+		private String StrTextId = "";
 		
 		
 		public void updateType(){
