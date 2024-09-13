@@ -1,0 +1,45 @@
+programa teste
+	declare x : NUMBER;
+	declare a, b : STRING;
+	declare z, k : REALNUMBER;
+	
+	x := (4 * 10)/ 5 + 2 - 7 ;
+	k := 3.5;
+	z := 4.3 + 5.8 - k + 2;	
+	b := "compiladores";
+
+	
+	escreva("segue o valor do inteiro 'x':");
+	escreva(x);
+	escreva("abaixo estará o valor do ponto flutuante 'z':");
+	escreva(z);
+	escreva("e por último o valor da String 'b':");
+	escreva(b);
+	escreva("\n");
+	
+	escreva("agora é hora de digitar !!! escreva uma frase:");
+	leia(a);
+	escreva("repetindo o que você escreveu:");
+	escreva(a);
+	escreva("\n");
+	
+
+	"se" (x < 5) entao {
+		realize{
+			x := x - 1;
+		} enquanto (x != 0);
+		"se" (x == 0) entao{
+			escreva("a condição 'se' foi ativada, logo x chegou ao valor zero!");
+		}
+	}
+	"senao"{
+		escreva("a condição 'senao' foi ativada, logo x é maior que 5"); 
+	}
+	
+	enquanto ( k <= z ){
+		k := k + 1;
+	}
+	escreva("looping finalizado, agora k é maior que z. Seu valor é:");
+	escreva(k);
+	
+fimprog;
